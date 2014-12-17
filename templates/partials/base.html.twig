@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% block head %}
+    <meta charset="utf-8" />
+    <title>{% if header.title %}{{ header.title }} | {% endif %}{{ site.title }}</title>
+    {% include 'partials/metadata.html.twig' %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/png" href="{{ theme_url }}/images/favicon.png" />
+
+    {% block stylesheets %}
+        {% do assets.addCss('theme://css-compiled/global.css',100) %}
+        {% do assets.addCss('theme://css/font-awesome/css/font-awesome.min.css',100) %}
+        <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+        <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+        <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+        <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    {% endblock %}
+    {{ assets.css() }}
+{% endblock head%}
+</head>
+<body id="page-top" class="index">
+
+        {% block header_navigation %}
+            {% include 'partials/navigation.html.twig' %}
+        {% endblock %}
+
+        {% block header %}{% endblock %}
+
+        {% block showcase %}{% endblock %}
+
+        {% block body %}
+            {% block content %}{% endblock %}
+        {% endblock %}
+
+        {% block footer %}
+            {% include 'partials/footer.html.twig' %}
+        {% endblock %}
+
+
+    {% block javascripts %}
+        {% do assets.addJs('theme://js/jquery-1.11.0.js',101) %}
+        {% do assets.addJs('theme://js/bootstrap.min.js',100) %}
+        {% do assets.addJs('theme://js/jquery.easing.min.js') %}
+        {% do assets.addJs('theme://js/classie.js') %}
+        {% do assets.addJs('theme://js/cbpAnimatedHeader.js') %}
+
+        {% do assets.addJs('theme://js/jqBootstrapValidation.js') %}
+        {% do assets.addJs('theme://js/contact_me.js') %}
+        {% do assets.addJs('theme://js/agency.js') %}
+
+
+
+    {% endblock %}
+    {{ assets.js() }}
+
+</body>
+</html>
