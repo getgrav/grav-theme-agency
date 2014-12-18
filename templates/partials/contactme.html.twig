@@ -1,3 +1,4 @@
+<script type="text/javascript">
 $(function() {
 
     $("input,textarea").jqBootstrapValidation({
@@ -18,7 +19,7 @@ $(function() {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "././mail/contact_me.php",
+                url: "{{ theme_url }}/mail/contact_me.html",
                 type: "POST",
                 data: {
                     name: name,
@@ -68,3 +69,4 @@ $(function() {
 $('#name').focus(function() {
     $('#success').html('');
 });
+</script>

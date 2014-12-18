@@ -47,13 +47,13 @@
         {% do assets.addJs('theme://js/cbpAnimatedHeader.js') %}
 
         {% do assets.addJs('theme://js/jqBootstrapValidation.js') %}
-        {% do assets.addJs('theme://js/contact_me.js') %}
+       
         {% do assets.addJs('theme://js/agency.js') %}
 
 
 
     {% endblock %}
     {{ assets.js() }}
-
+ {% include 'partials/contactme.html.twig' %}
 </body>
 </html>
