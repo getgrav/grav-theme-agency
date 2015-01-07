@@ -1,13 +1,13 @@
 name: Agency
-version: 1.2.3
-description: "Agency is the default theme included with **Grav**"
-icon: empire
+version: 0.9.9
+description: "Agency is a clean and professional one-page theme for **Grav**"
+icon: group
 author:
   name: Team Grav
   email: devs@getgrav.org
   url: http://getgrav.org
 homepage: https://github.com/getgrav/grav-theme-agency
-keywords: agency, theme, core, modern, fast, responsive, html5, css3
+keywords: agency, theme, onepage, modern, fast, responsive, html5, css3
 bugs: https://github.com/getgrav/grav-theme-agency/issues
 license: MIT
 
