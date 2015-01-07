@@ -18,6 +18,14 @@
         <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
     {% endblock %}
     {{ assets.css() }}
+
+    {% block javascripts %}
+        {% do assets.addJs('theme://js/jquery-1.11.0.js',101) %}
+        {% do assets.addJs('theme://js/bootstrap.min.js',100) %}
+        {% do assets.addJs('theme://js/jquery.easing.min.js') %}
+    {% endblock %}
+    {{ assets.js() }}
+
 {% endblock head%}
 </head>
 <body id="page-top" class="index">
@@ -38,20 +46,14 @@
             {% include 'partials/footer.html.twig' %}
         {% endblock %}
 
-
-    {% block javascripts %}
-        {% do assets.addJs('theme://js/jquery-1.11.0.js',101) %}
-        {% do assets.addJs('theme://js/bootstrap.min.js',100) %}
-        {% do assets.addJs('theme://js/jquery.easing.min.js') %}
+        {% block javascripts_bottom %}
         {% do assets.addJs('theme://js/classie.js') %}
         {% do assets.addJs('theme://js/cbpAnimatedHeader.js') %}
 
-       
+        
         {% do assets.addJs('theme://js/agency.js') %}
-
-
-
     {% endblock %}
     {{ assets.js() }}
+
 </body>
 </html>

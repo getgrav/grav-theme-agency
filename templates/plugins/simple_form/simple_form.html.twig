@@ -46,4 +46,33 @@
     {% endfor %}
   </div>
 </form>
+
+<script>
+      $(function() {
+        $('#simple_form').submit(function() {
+          $.ajax({
+            dataType: 'jsonp',
+            url: "http://getsimpleform.com/messages/ajax?form_api_token={{ token }}",
+            data: {
+              {% for key, field in fields %}
+                {% if field.type != 'submit' %}
+                  {{ key }}: $("#simple_form-field-{{ key }}").val(),
+                {% endif %}
+              {% endfor %}
+            }
+          }).done(function() {
+            $('#simple_form-success').html("<div class='alert alert-success'>");
+            $('#simple_form-success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;").append("</button>");
+            $('#simple_form-success > .alert-success').append("<strong>{{ messages.success }}</strong>");
+            $('#simple_form-success > .alert-success').append('</div>');
+
+            //clear all fields
+            $('#simple_form').trigger("reset");
+          });
+
+        return false;
+      })
+    });
+  </script>
+
 {% endif %}
