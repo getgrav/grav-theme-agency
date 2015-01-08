@@ -1,12 +1,24 @@
-# Agency
+# Agency Theme for Grav
 
 ![Agency](assets/readme_1.png)
 
 This Grav theme is a port of the [Jekyll Agency theme](https://github.com/y7kim/agency-jekyll-theme) by [Rick Kim (y7kim)](https://github.com/y7kim), which originated from the [Agency Bootstrap theme by Start Bootstrap](http://startbootstrap.com/template-overviews/agency/).
 
+# Features
+
+* Fully responsive
+* Custom collapsing navigation with active classes, smooth page scrolling, and responsive fallback stylings
+* Services section with CSS only circle icons by Font Awesome
+* Portfolio grid with modal window popup previews for portfolio item details
+* About section with a responsive timeline, special thanks to Bootsnipp
+* Team member section with circle profile images and social media links
+* Working PHP contact form with validation - just add your email address to the PHP file included
+* Footer with social links, copyright information, and other links
+* LESS files included for deeper customization options
+
 # Installation
 
-Installing the Agency theme can be done in one of two ways. Our GPM (Grav Package Manager) installation method enables you to quickly and easily install the theme with a simple terminal command, while the manual method enables you to do so via a zip file. 
+Installing the Agency theme can be done in one of two ways. Our GPM (Grav Package Manager) installation method enables you to quickly and easily install the theme with a simple terminal command, while the manual method enables you to do so via a zip file.
 
 The theme by itself is useful, but you may have an easier time getting up and running by installing a skeleton. The [Agency Site Skeleton](https://github.com/getgrav/grav-skeleton-agency-site) is a self-contained repository for a complete sites which includes: sample content, configuration, theme, and plugins.
 
