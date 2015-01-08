@@ -57,7 +57,7 @@ This command will check your Grav install to see if your Agency theme is due for
 Manually updating Agency is pretty simple. Here is what you will need to do to get this done:
 
 * Delete the `your/site/user/themes/agency` directory.
-* Downalod the new version of the Agency theme from either [GitHub](https://github.com/getgrav/grav-plugin-agency) or [GetGrav.org](http://getgrav.org/downloads/themes#extras).
+* Download the new version of the Agency theme from either [GitHub](https://github.com/getgrav/grav-theme-agency) or [GetGrav.org](http://getgrav.org/downloads/themes).
 * Unzip the zip file in `your/site/user/themes` and rename the resulting folder to `agency`.
 * Clear the Grav cache. The simplest way to do this is by going to the root Grav directory in terminal and typing `bin/grav clear-cache`.
 
