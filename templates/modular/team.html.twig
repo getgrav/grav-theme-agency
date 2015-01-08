@@ -1,0 +1,31 @@
+<section id="team" class="bg-light-gray">
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            {{ content }}
+        </div>
+    </div>
+    <div class="row">
+        {% for member in page.header.people %}
+            <div class="col-sm-4">
+                <div class="team-member">
+                    <img src="{{ page.media[member.pic].url }}" class="img-responsive img-circle" alt="">
+                    <h4>{{ member.name }}</h4>
+                    <p class="text-muted">{{ member.position }}</p>
+                    <ul class="list-inline social-buttons">
+                        {% for network in member.social %}
+                            <li><a href="{{ network.url }}"><i class="fa fa-{{ network.title }}"></i></a>
+                            {% endfor %}
+
+                        </ul>
+                    </div>
+                </div>
+            {% endfor %}  
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <p class="large text-muted">{{ page.header.description }}</p>
+            </div>
+        </div>
+    </div>
+</section>

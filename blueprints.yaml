@@ -1,0 +1,16 @@
+name: Agency
+version: 1.0.0
+description: "Agency is a clean and professional one-page theme for **Grav**"
+icon: group
+author:
+  name: Team Grav
+  email: devs@getgrav.org
+  url: http://getgrav.org
+homepage: https://github.com/getgrav/grav-theme-agency
+keywords: agency, theme, onepage, modern, fast, responsive, html5, css3
+bugs: https://github.com/getgrav/grav-theme-agency/issues
+license: MIT
+
+form:
+  validation: strict
+  fields:

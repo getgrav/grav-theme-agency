@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-lg-12 text-center">
+        {{ content }}
+    </div>
+</div>
+<aside class="clients">
+    <div class="container">
+        <div class="row">
+            {% for client in page.header.clients %}
+                <div class="col-md-3 col-sm-6">
+                    <a href="{{ client.url }}">
+                        <img src="{{ page.media[client.logo].url }}" class="img-responsive img-centered" alt="">
+                    </a>
+                </div>
+            {% endfor %} 
+        </div>
+    </div>
+</aside>
