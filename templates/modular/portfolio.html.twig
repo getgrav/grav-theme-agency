@@ -8,7 +8,7 @@
     <div class="row">
         {% for portfolio in page.header.portfolios %}
             <div class="col-md-4 col-sm-6 portfolio-item">
-                <a href="#portfolioModal{{ portfolio.modal-id }}" class="portfolio-link" data-toggle="modal">
+                <a href="#portfolioModal{{ portfolio.modalid }}" class="portfolio-link" data-toggle="modal">
                     <div class="portfolio-hover">
                         <div class="portfolio-hover-content">
                             <i class="fa fa-plus fa-3x"></i>
@@ -29,7 +29,7 @@
 
 
  {% for portfolio in page.header.portfolios %}
-    <div class="portfolio-modal modal fade" id="portfolioModal{{ portfolio.modal-id }}" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="portfolio-modal modal fade" id="portfolioModal{{ portfolio.modalid }}" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -51,7 +51,7 @@
                                     </strong>
                                 </li>
                                 <li>Date:
-                                    <strong><a href="http://startbootstrap.com">{{ portfolio.project-date }}</a>
+                                    <strong><a href="http://startbootstrap.com">{{ portfolio.projectdate }}</a>
                                     </strong>
                                 </li>
                                 <li>Service:
