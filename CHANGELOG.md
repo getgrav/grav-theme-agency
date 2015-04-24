@@ -1,4 +1,10 @@
 # v1.0.3
+## 04/24/2015
+
+1. [](#bugfix)
+    * Fix for modal vertical scrolling
+
+# v1.0.3
 ## 03/01/2015
 
 1. [](#improved)
