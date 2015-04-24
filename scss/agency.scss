@@ -786,6 +786,10 @@ ul.social-buttons li a:active {
     box-shadow: none;
 }
 
+.portfolio-modal .modal-body {
+    overflow-y: scroll;
+}
+
 .portfolio-modal .modal-content h2 {
     margin-bottom: 15px;
     font-size: 3em;
@@ -844,6 +848,13 @@ ul.social-buttons li a:active {
     -webkit-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
+}
+
+.portfolio-modal.modal {
+  .modal-content {
+    height: 100%;
+    overflow-y: scroll;
+  }
 }
 
 ::-moz-selection {
