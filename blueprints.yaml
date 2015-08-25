@@ -13,5 +13,23 @@ bugs: https://github.com/getgrav/grav-theme-agency/issues
 license: MIT
 
 form:
-  validation: strict
+  validation: loose
   fields:
+    dropdown.enabled:
+        type: toggle
+        label: Dropdown in navbar
+        highlight: 1
+        default: 0
+        options:
+          1: Enabled
+          0: Disabled
+        validate:
+          type: bool
+
+    color:
+        type: text
+        size: medium
+        label: Color
+        default: 'blue'
+        validate:
+          type: text
