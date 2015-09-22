@@ -7,9 +7,9 @@
    </div>
    <div class="row">
     {% if config.plugins.simple_form.enabled %}
-      {% set simple_form_config = page.header.simple_form ?: config.themes.agency.simple_form %}
+        {% set simple_form_config = page.header.simple_form ?: config.themes.agency.simple_form %}
         {{ simple_form(simple_form_config) }}
-      {% endif %}
+    {% endif %}
     </div>
   </div>
 </section>

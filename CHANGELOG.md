@@ -1,3 +1,13 @@
+# v1.2.0
+## 09/22/2015
+
+1. [](#improved)
+    * Improved compatibility with newest Grav
+    * Improved compatibility with SimpleForm component
+    * Minor fixes and cleanups
+2. [](#new)
+    * Added default layout 
+
 # v1.1.0
 ## 08/25/2015
 
