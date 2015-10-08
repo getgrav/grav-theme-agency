@@ -19,11 +19,6 @@
         {% endblock %}
         {{ assets.css() }}
 
-        {% block javascripts %}
-            {% do assets.add('jquery',101) %}
-
-        {% endblock %}
-        {{ assets.js() }}
         {% endblock head%}
     </head>
     <body id="page-top" class="index">
@@ -40,6 +35,7 @@
                     {% endblock %}
 
                     {% block javascripts_bottom %}
+                      {% do assets.add('jquery',101) %}
                         {% do assets.addJs('theme://js/bootstrap.min.js',100) %}
                         {% do assets.addJs('theme://js/jquery.easing.min.js') %}
                         {% do assets.addJs('theme://js/classie.js') %}
