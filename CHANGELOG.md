@@ -1,3 +1,10 @@
+# v1.3.0
+## 10/23/2015
+
+1. [](#bugfix)
+    * Fix hardcoded navigation
+    * Fixed onpage modular navigation
+
 # v1.2.0
 ## 09/22/2015
 
