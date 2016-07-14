@@ -1,3 +1,14 @@
+# v1.4.0
+## 07/14/2016
+
+1. [](#improved)
+    * Remove unneeded streams from Theme YAML
+    * Delete unused composer.json
+    * Load Google Fonts using a protocol independent URL, fix SSL issue
+    * Supports the Form plugin modular page
+1. [](#bugfix)
+    * Fix setting the page language in the html tag
+    
 # v1.3.1
 ## 12/11/2015
 
