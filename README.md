@@ -12,7 +12,7 @@ This Grav theme is a port of the [Jekyll Agency theme](https://github.com/y7kim/
 * Portfolio grid with modal window popup previews for portfolio item details
 * About section with a responsive timeline, special thanks to Bootsnipp
 * Team member section with circle profile images and social media links
-* Working PHP contact form with validation - just add your email address to the PHP file included
+* Working PHP contact form with validation
 * Footer with social links, copyright information, and other links
 * LESS files included for deeper customization options
 
