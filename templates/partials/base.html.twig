@@ -18,6 +18,7 @@
     <link href='//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
   {% endblock %}
+  {{ assets.js('head') }}  
   {{ assets.css() }}
 
   {% endblock head%}
@@ -43,7 +44,7 @@
     {% do assets.addJs('theme://js/cbpAnimatedHeader.js') %}
     {% do assets.addJs('theme://js/agency.js') %}
   {% endblock %}
-  {{ assets.js() }}
+  {{ assets.js('bottom') }}
 
 </body>
 </html>
