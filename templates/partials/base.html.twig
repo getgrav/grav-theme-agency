@@ -37,12 +37,12 @@
   {% endblock %}
 
   {% block javascripts_bottom %}
-    {% do assets.add('jquery',101) %}
-    {% do assets.addJs('theme://js/bootstrap.min.js',100) %}
-    {% do assets.addJs('theme://js/jquery.easing.min.js') %}
-    {% do assets.addJs('theme://js/classie.js') %}
-    {% do assets.addJs('theme://js/cbpAnimatedHeader.js') %}
-    {% do assets.addJs('theme://js/agency.js') %}
+    {% do assets.add('jquery',{'priority':101,'group':'bottom'}) %}
+    {% do assets.addJs('theme://js/bootstrap.min.js',{'priority':100,'group':'bottom'}) %}
+    {% do assets.addJs('theme://js/jquery.easing.min.js',{'group':'bottom'}) %}
+    {% do assets.addJs('theme://js/classie.js',{'group':'bottom'}) %}
+    {% do assets.addJs('theme://js/cbpAnimatedHeader.js',{'group':'bottom'}) %}
+    {% do assets.addJs('theme://js/agency.js',{'group':'bottom'}) %}
   {% endblock %}
   {{ assets.js('bottom') }}
 
