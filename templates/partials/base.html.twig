@@ -7,6 +7,7 @@
   {% include 'partials/metadata.html.twig' %}
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="icon" type="image/png" href="{{ url('theme://img/favicon.png') }}" />
+  {% endblock %}
 
   {% block stylesheets %}
     {% do assets.addCss('theme://css-compiled/global.css',100) %}
@@ -18,10 +19,20 @@
     <link href='//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
   {% endblock %}
-  {{ assets.js('head') }}  
-  {{ assets.css() }}
 
-  {% endblock head%}
+  {% block javasripts %}
+    {% do assets.addJs('jquery',{'priority':101,'group':'bottom'}) %}
+    {% do assets.addJs('theme://js/bootstrap.min.js',{'priority':100,'group':'bottom'}) %}
+    {% do assets.addJs('theme://js/jquery.easing.min.js',{'group':'bottom'}) %}
+    {% do assets.addJs('theme://js/classie.js',{'group':'bottom'}) %}
+    {% do assets.addJs('theme://js/cbpAnimatedHeader.js',{'group':'bottom'}) %}
+    {% do assets.addJs('theme://js/agency.js',{'group':'bottom'}) %}
+  {% endblock %}
+
+  {% block assets deferred %}
+    {{ assets.css()|raw }}
+    {{ assets.js()|raw }}
+  {% endblock %}
 </head>
 <body id="page-top" class="index">
 
@@ -37,14 +48,7 @@
   {% endblock %}
 
   {% block javascripts_bottom %}
-    {% do assets.add('jquery',{'priority':101,'group':'bottom'}) %}
-    {% do assets.addJs('theme://js/bootstrap.min.js',{'priority':100,'group':'bottom'}) %}
-    {% do assets.addJs('theme://js/jquery.easing.min.js',{'group':'bottom'}) %}
-    {% do assets.addJs('theme://js/classie.js',{'group':'bottom'}) %}
-    {% do assets.addJs('theme://js/cbpAnimatedHeader.js',{'group':'bottom'}) %}
-    {% do assets.addJs('theme://js/agency.js',{'group':'bottom'}) %}
+  {{ assets.js('bottom') }}  
   {% endblock %}
-  {{ assets.js('bottom') }}
-
 </body>
 </html>
