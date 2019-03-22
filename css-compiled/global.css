@@ -836,7 +836,7 @@ td, th {
 
 html {
   font-size: 10px;
-  -webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
 body {
   font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -4940,7 +4940,7 @@ button.close {
   border-radius: 10px;
   cursor: pointer;
   background-color: #000 \9;
-  background-color: transparent; }
+  background-color: rgba(0, 0, 0, 0); }
 
 .carousel-indicators .active {
   margin: 0;
@@ -5305,8 +5305,18 @@ body {
 .text-muted {
   color: #777; }
 
-#contact h3 {
-  color: #777; }
+#contact h3, #contact label {
+  color: #999; }
+
+.notices {
+  color: #eee;
+  padding: 10px 10px 3px;
+  margin-bottom: 20px;
+  border-radius: 3px; }
+  .notices.error {
+    background-color: #c00; }
+  .notices.success, .notices.warning {
+    background-color: #8B8B8B; }
 
 .text-primary {
   color: #fed136; }
