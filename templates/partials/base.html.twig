@@ -21,7 +21,7 @@
   {% endblock %}
 
   {% block javasripts %}
-    {% do assets.addJs('jquery',{'priority':101,'group':'bottom'}) %}
+    {% do assets.addJs('jquery',{'priority':101,'group':'head'}) %}
     {% do assets.addJs('theme://js/bootstrap.min.js',{'priority':100,'group':'bottom'}) %}
     {% do assets.addJs('theme://js/jquery.easing.min.js',{'group':'bottom'}) %}
     {% do assets.addJs('theme://js/classie.js',{'group':'bottom'}) %}
