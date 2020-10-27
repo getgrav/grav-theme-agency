@@ -11,6 +11,7 @@ $(function() {
         $('html, body').stop().animate({
             scrollTop: $($anchor.attr('href')).offset().top
         }, 1500, 'easeInOutExpo');
+        window.history.pushState("", "", '#' + $anchor.text().toLowerCase());
         event.preventDefault();
     });
 });

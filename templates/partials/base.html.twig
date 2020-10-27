@@ -2,6 +2,7 @@
 <html lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}">
 <head>
   {% block head %}
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
   <meta charset="utf-8" />
   <title>{% if header.title %}{{ header.title }} | {% endif %}{{ site.title }}</title>
   {% include 'partials/metadata.html.twig' %}
