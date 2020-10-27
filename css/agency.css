@@ -23,13 +23,14 @@ body {
     padding: 10px 10px 3px;
     margin-bottom: 20px;
     border-radius: 3px;
+}
 
-    &.error {
-        background-color: #c00;
-    }
-    &.success, &.warning {
-        background-color: #8B8B8B;
-    }
+.notices.error {
+    background-color: #c00;
+}
+
+.notices .success, .warning {
+    background-color: #8B8B8B;
 }
 
 .text-primary {
@@ -876,11 +877,9 @@ ul.social-buttons li a:active {
     transform: rotate(90deg);
 }
 
-.portfolio-modal.modal {
-  .modal-content {
+.portfolio-modal.modal .modal-content {
     height: 100%;
     overflow-y: scroll;
-  }
 }
 
 ::-moz-selection {

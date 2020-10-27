@@ -11,10 +11,11 @@
   {% endblock %}
 
   {% block stylesheets %}
-    {% do assets.addCss('theme://css-compiled/global.css',100) %}
-    {% do assets.addCss('theme://css/custom.css',100) %}
-    
+    {% do assets.addCss('theme://bootstrap-3.3.7/css/bootstrap.min.css',100) %}
     {% do assets.addCss('theme://css/font-awesome.min.css',100) %}
+
+    {% do assets.addCss('theme://css/agency.css',100) %}
+    {% do assets.addCss('theme://css/custom.css',100) %}
 
     {% do assets.addCss('theme://css/css_Montserrat.css',100) %}
     {% do assets.addCss('theme://css/css_KaushanAndScript.css',100) %}
@@ -25,7 +26,7 @@
 
   {% block javascripts %}
     {% do assets.addJs('jquery',{'priority':101,'group':'head'}) %}
-    {% do assets.addJs('theme://js/bootstrap.min.js',{'priority':100,'group':'bottom'}) %}
+    {% do assets.addJs('theme://bootstrap-3.3.7/js/bootstrap.min.js',{'priority':100,'group':'bottom'}) %}
     {% do assets.addJs('theme://js/jquery.easing.min.js',{'group':'bottom'}) %}
     {% do assets.addJs('theme://js/classie.js',{'group':'bottom'}) %}
     {% do assets.addJs('theme://js/cbpAnimatedHeader.js',{'group':'bottom'}) %}
