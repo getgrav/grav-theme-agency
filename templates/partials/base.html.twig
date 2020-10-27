@@ -40,16 +40,66 @@
 </head>
 <body id="page-top" class="index">
 
-  {% block header_navigation %}
-    {% include 'partials/navigation.html.twig' %}
-  {% endblock %}
+  <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+          <div class="navbar-header page-scroll">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand page-scroll" href="#page-top">{{site.title}}</a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                  <li class="hidden">
+                      <a href="#page-top"></a>
+                  </li>
+                  {% for link in site.links %}
+                      {% if link.url | contains('http') %}
+                          {% set domain = '' %}
+                              {% elseif link.url | contains('#') %}
+                              {% set domain = '' %}
+                                  {% else %}
+                                  {% set domain = base_url_absolute %}
+                                  {% endif %}
+                                  <li><a class="page-scroll" href="{{ domain }}{{ link.url }}" {% if link.url | contains('http') %}target="_blank"{% endif %}>{{ link.title }}</a></li>
+                              {% endfor %}
+              </ul>
+          </div>
+      </div>
+  </nav>
   {% block body %}
     {% block content %}{% endblock %}
   {% endblock %}
 
-  {% block footer %}
-    {% include 'partials/footer.html.twig' %}
-  {% endblock %}
+  <footer>
+      <div class="container">
+          <div class="row">
+              <div class="col-md-4">
+                  <span class="copyright">Copyright &copy; {{ site.title }} 2014</span>
+              </div>
+              <div class="col-md-4">
+                  <ul class="list-inline social-buttons">
+                      {% for network in site.social %}
+                          <li><a href="{{ network.url }}"><i class="fa fa-{{ network.title }}"></i></a>
+                          </li>
+                      {% endfor %}
+                  </ul>
+              </div>
+              <div class="col-md-4">
+                  <ul class="list-inline quicklinks">
+                      {% for link in site.quicklinks %}
+                          <li><a href="{{ link.url }}">{{ link.title }}</a>
+                          </li>
+                      {% endfor %}
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </footer>
 
   {% block javascripts_bottom %}
   {{ assets.js('bottom')|raw }}  
