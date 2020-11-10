@@ -11,17 +11,17 @@
   {% endblock %}
 
   {% block stylesheets %}
-    {% do assets.addCss('theme://bootstrap-3.3.7/css/bootstrap.min.css',100) %}
-    {% do assets.addCss('theme://css/font-awesome.min.css',100) %}
+    {% do assets.addCss('theme://bootstrap-3.3.7/css/bootstrap.min.css', { priority: 100, loading: 'inline', position: 'before'}) %}
+    {% do assets.addCss('theme://css/font-awesome.min.css',{ priority: 100, loading: 'inline', position: 'before'}) %}
 
     {% do assets.addCss('theme://css/agency.css',100) %}
     {% do assets.addCss('theme://css/custom.css',100) %}
 
-    {% do assets.addCss('theme://css/css_Montserrat.css',100) %}
-    {% do assets.addCss('theme://css/css_KaushanAndScript.css',100) %}
-    {% do assets.addCss('theme://css/css_Lato.css',100) %}
-    {% do assets.addCss('theme://css/css_DroidSerif.css',100) %}
-    {% do assets.addCss('theme://css/css_RobotoSlab.css',100) %}
+    {% do assets.addCss('theme://css/css_Montserrat.css',{ priority: 100, loading: 'inline', position: 'before'}) %}
+    {% do assets.addCss('theme://css/css_KaushanAndScript.css',{ priority: 100, loading: 'inline', position: 'before'}) %}
+    {% do assets.addCss('theme://css/css_Lato.css',{ priority: 100, loading: 'inline', position: 'before'}) %}
+    {% do assets.addCss('theme://css/css_DroidSerif.css',{ priority: 100, loading: 'inline', position: 'before'}) %}
+    {% do assets.addCss('theme://css/css_RobotoSlab.css',{ priority: 100, loading: 'inline', position: 'before'}) %}
   {% endblock %}
 
   {% block javascripts %}
