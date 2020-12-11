@@ -5,8 +5,8 @@
 
 
 {% block content %}
-    {{ page.content }}
+    {{ page.content|raw }}
     {% for module in page.collection() %}
-        {{ module.content }}
+        {{ module.content|raw }}
     {% endfor %}
 {% endblock %}
