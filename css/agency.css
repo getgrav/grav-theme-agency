@@ -312,12 +312,16 @@ header h2 {
     margin-bottom: 25px;
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 50px;
+    font-size: 35px;
     font-weight: 700;
     line-height: 50px;
 }
 
 @media(min-width:768px) {
+    header h2 {
+        font-size: 50px;
+    }
+    
     header .intro-text {
         padding-top: 300px;
         padding-bottom: 200px;
@@ -345,10 +349,10 @@ section {
     padding: 100px 0;
 }
 
-section h2{
+section h2 {
     margin-top: 0;
     margin-bottom: 15px;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 section h3 {
@@ -361,6 +365,10 @@ section h3 {
 }
 
 @media(min-width:768px) {
+    section h2 {
+        font-size: 40px;
+    }
+
     section {
         padding: 150px 0;
     }
