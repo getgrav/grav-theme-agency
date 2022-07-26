@@ -7,11 +7,11 @@
 body {
     overflow-x: hidden;
     font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
-    color: $secondary-dark;
+    color: #333;
 }
 
 .text-muted {
-    color: #777;
+    color: #555;
 }
 
 #contact h3, #contact label {
@@ -23,17 +23,18 @@ body {
     padding: 10px 10px 3px;
     margin-bottom: 20px;
     border-radius: 3px;
+}
 
-    &.error {
-        background-color: #c00;
-    }
-    &.success, &.warning {
-        background-color: #8B8B8B;
-    }
+.notices.error {
+    background-color: #c00;
+}
+
+.notices .success, .warning {
+    background-color: #8B8B8B;
 }
 
 .text-primary {
-    color: $primary;
+    color: #fed136;
 }
 
 p {
@@ -54,14 +55,14 @@ a.active {
 }
 
 a {
-    color: $primary;
+    color: #fed136;
 }
 
 a:hover,
 a:focus,
 a:active,
 a.active {
-    color: $secondary;
+    color: #fec503;
 }
 
 h1,
@@ -70,7 +71,7 @@ h3,
 h4,
 h5,
 h6 {
-    text-transform: uppercase;
+     /*text-transform: uppercase;*/
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 }
@@ -88,12 +89,12 @@ h6 {
 }
 
 .btn-primary {
-    border-color: $primary;
+    border-color: #fed136;
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     color: #fff;
-    background-color: $primary;
+    background-color: #fed136;
 }
 
 .btn-primary:hover,
@@ -101,9 +102,9 @@ h6 {
 .btn-primary:active,
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
-    border-color: $primary;
+    border-color: #fed136;
     color: #fff;
-    background-color: $secondary;
+    background-color: #fec503;
 }
 
 .btn-primary:active,
@@ -127,25 +128,25 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-    border-color: $primary;
-    background-color: $primary;
+    border-color: #fed136;
+    background-color: #fed136;
 }
 
 .btn-primary .badge {
-    color: $primary;
+    color: #fed136;
     background-color: #fff;
 }
 
 .btn-xl {
     padding: 20px 40px;
-    border-color: $primary;
+    border-color: #fed136;
     border-radius: 3px;
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 18px;
     font-weight: 700;
     color: #fff;
-    background-color: $primary;
+    /*background-color: #fed136;*/
 }
 
 .btn-xl:hover,
@@ -153,9 +154,9 @@ fieldset[disabled] .btn-primary.active {
 .btn-xl:active,
 .btn-xl.active,
 .open .dropdown-toggle.btn-xl {
-    border-color: $primary;
+    border-color: #fed136;
     color: #fff;
-    background-color: $secondary;
+    background-color: #fec503;
 }
 
 .btn-xl:active,
@@ -179,12 +180,12 @@ fieldset[disabled] .btn-xl:active,
 .btn-xl.disabled.active,
 .btn-xl[disabled].active,
 fieldset[disabled] .btn-xl.active {
-    border-color: $primary;
-    background-color: $primary;
+    border-color: #fed136;
+    background-color: #fed136;
 }
 
 .btn-xl .badge {
-    color: $primary;
+    color: #fed136;
     background-color: #fff;
 }
 
@@ -195,14 +196,14 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-default .navbar-brand {
     font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
-    color: $primary;
+    color: #fed136;
 }
 
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus,
 .navbar-default .navbar-brand:active,
 .navbar-default .navbar-brand.active {
-    color: $secondary;
+    color: #fec503;
 }
 
 .navbar-default .navbar-collapse {
@@ -210,8 +211,8 @@ fieldset[disabled] .btn-xl.active {
 }
 
 .navbar-default .navbar-toggle {
-    border-color: $primary;
-    background-color: $primary;
+    border-color: #fed136;
+    background-color: #fed136;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
@@ -220,7 +221,7 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-    background-color: $primary;
+    background-color: #fed136;
 }
 
 .navbar-default .nav li a {
@@ -234,19 +235,19 @@ fieldset[disabled] .btn-xl.active {
 .navbar-default .nav li a:hover,
 .navbar-default .nav li a:focus {
     outline: 0;
-    color: $primary;
+    color: #fed136;
 }
 
 .navbar-default .navbar-nav>.active>a {
     border-radius: 0;
     color: #fff;
-    background-color: $primary;
+    background-color: #fed136;
 }
 
 .navbar-default .navbar-nav>.active>a:hover,
 .navbar-default .navbar-nav>.active>a:focus {
     color: #fff;
-    background-color: $secondary;
+    background-color: #fec503;
 }
 
 @media(min-width:768px) {
@@ -311,12 +312,16 @@ header h2 {
     margin-bottom: 25px;
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 50px;
+    font-size: 35px;
     font-weight: 700;
     line-height: 50px;
 }
 
 @media(min-width:768px) {
+    header h2 {
+        font-size: 50px;
+    }
+    
     header .intro-text {
         padding-top: 300px;
         padding-bottom: 200px;
@@ -344,22 +349,26 @@ section {
     padding: 100px 0;
 }
 
-section h2{
+section h2 {
     margin-top: 0;
     margin-bottom: 15px;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 section h3 {
-    margin-bottom: 75px;
+    /*margin-bottom: 75px;*/
     text-transform: none;
     font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 16px;
     font-style: italic;
-    font-weight: 400;
+    /*font-weight: 400;*/
 }
 
 @media(min-width:768px) {
+    section h2 {
+        font-size: 40px;
+    }
+
     section {
         padding: 150px 0;
     }
@@ -373,6 +382,7 @@ section h3 {
 #portfolio .portfolio-item {
     right: 0;
     margin: 0 0 15px;
+    min-height: 330px;
 }
 
 #portfolio .portfolio-item .portfolio-link {
@@ -391,7 +401,7 @@ section h3 {
     -moz-transition: all ease .5s;
     transition: all ease .5s;
     background: rgba(254,209,54,.9); /* Fallback when no plugin support */
-    background: rgba($primary, .9);
+    background: rgba(#fed136, .9);
 }
 
 #portfolio .portfolio-item .portfolio-link .portfolio-hover:hover {
@@ -418,6 +428,13 @@ section h3 {
     margin: 0;
 }
 
+.portfolio-hover {
+    position: relative;
+    top: 130px;
+    left: 45%;
+    margin-top: -45px;
+}
+
 #portfolio .portfolio-item .portfolio-caption {
     margin: 0 auto;
     padding: 25px;
@@ -436,6 +453,10 @@ section h3 {
     font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 16px;
     font-style: italic;
+}
+
+.portfolio-item {
+  min-height: 300px;
 }
 
 #portfolio * {
@@ -514,7 +535,7 @@ section h3 {
     border-radius: 100%;
     text-align: center;
     color: #fff;
-    background-color: $primary;
+    background-color: #fed136;
 }
 
 .timeline>li .timeline-image h4 {
@@ -668,9 +689,9 @@ section h3 {
     margin-top: 0;
 }
 
-aside.clients img {
+/*aside.clients img {
     margin: 50px auto;
-}
+}*/
 
 section#contact {
     background-color: #222;
@@ -701,7 +722,7 @@ section#contact .form-group textarea.form-control {
 }
 
 section#contact .form-control:focus {
-    border-color: $primary;
+    border-color: #fed136;
     box-shadow: none;
 }
 
@@ -779,7 +800,7 @@ ul.social-buttons li a {
 ul.social-buttons li a:hover,
 ul.social-buttons li a:focus,
 ul.social-buttons li a:active {
-    background-color: $primary;
+    background-color: #fed136;
 }
 
 .btn:focus,
@@ -864,21 +885,19 @@ ul.social-buttons li a:active {
     transform: rotate(90deg);
 }
 
-.portfolio-modal.modal {
-  .modal-content {
+.portfolio-modal.modal .modal-content {
     height: 100%;
     overflow-y: scroll;
-  }
 }
 
 ::-moz-selection {
     text-shadow: none;
-    background: $primary;
+    background: #fed136;
 }
 
 ::selection {
     text-shadow: none;
-    background: $primary;
+    background: #fed136;
 }
 
 img::selection {
@@ -890,5 +909,5 @@ img::-moz-selection {
 }
 
 body {
-    webkit-tap-highlight-color: $primary;
+    webkit-tap-highlight-color: #fed136;
 }

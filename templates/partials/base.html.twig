@@ -2,27 +2,31 @@
 <html lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}">
 <head>
   {% block head %}
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
   <meta charset="utf-8" />
   <title>{% if header.title %}{{ header.title }} | {% endif %}{{ site.title }}</title>
   {% include 'partials/metadata.html.twig' %}
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link rel="icon" type="image/png" href="{{ url('theme://img/favicon.png') }}" />
+  <link rel="icon" type="image/png" href="{{ url('/user/pages/01.home/favicon.png') ?: url('theme://img/favicon.png') }}" />
   {% endblock %}
 
   {% block stylesheets %}
-    {% do assets.addCss('theme://css-compiled/global.css',100) %}
+    {% do assets.addCss('theme://bootstrap-3.3.7/css/bootstrap.min.css', { priority: 100, loading: 'inline', position: 'before'}) %}
+    {% do assets.addCss('theme://css/font-awesome.min.css',{ priority: 100, loading: 'inline', position: 'before'}) %}
+
+    {% do assets.addCss('theme://css/agency.css',100) %}
     {% do assets.addCss('theme://css/custom.css',100) %}
-    {% do assets.addCss('theme://css/font-awesome.min.css',100) %}
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='//fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href="//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href='//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    {% do assets.addCss('theme://css/css_Montserrat.css',{ priority: 100, loading: 'inline', position: 'before'}) %}
+    {% do assets.addCss('theme://css/css_KaushanAndScript.css',{ priority: 100, loading: 'inline', position: 'before'}) %}
+    {% do assets.addCss('theme://css/css_Lato.css',{ priority: 100, loading: 'inline', position: 'before'}) %}
+    {% do assets.addCss('theme://css/css_DroidSerif.css',{ priority: 100, loading: 'inline', position: 'before'}) %}
+    {% do assets.addCss('theme://css/css_RobotoSlab.css',{ priority: 100, loading: 'inline', position: 'before'}) %}
   {% endblock %}
 
-  {% block javasripts %}
-    {% do assets.addJs('jquery',{'priority':101,'group':'bottom'}) %}
-    {% do assets.addJs('theme://js/bootstrap.min.js',{'priority':100,'group':'bottom'}) %}
+  {% block javascripts %}
+    {% do assets.addJs('jquery',{'priority':101,'group':'head'}) %}
+    {% do assets.addJs('theme://bootstrap-3.3.7/js/bootstrap.min.js',{'priority':100,'group':'bottom'}) %}
     {% do assets.addJs('theme://js/jquery.easing.min.js',{'group':'bottom'}) %}
     {% do assets.addJs('theme://js/classie.js',{'group':'bottom'}) %}
     {% do assets.addJs('theme://js/cbpAnimatedHeader.js',{'group':'bottom'}) %}
@@ -36,16 +40,66 @@
 </head>
 <body id="page-top" class="index">
 
-  {% block header_navigation %}
-    {% include 'partials/navigation.html.twig' %}
-  {% endblock %}
+  <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+          <div class="navbar-header page-scroll">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand page-scroll" href="#page-top">{{site.title}}</a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                  <li class="hidden">
+                      <a href="#page-top"></a>
+                  </li>
+                  {% for link in site.links %}
+                      {% if link.url | contains('http') %}
+                          {% set domain = '' %}
+                              {% elseif link.url | contains('#') %}
+                              {% set domain = '' %}
+                                  {% else %}
+                                  {% set domain = base_url_absolute %}
+                                  {% endif %}
+                                  <li><a class="page-scroll" href="{{ domain }}{{ link.url }}" {% if link.url | contains('http') %}target="_blank"{% endif %}>{{ link.title }}</a></li>
+                              {% endfor %}
+              </ul>
+          </div>
+      </div>
+  </nav>
   {% block body %}
     {% block content %}{% endblock %}
   {% endblock %}
 
-  {% block footer %}
-    {% include 'partials/footer.html.twig' %}
-  {% endblock %}
+  <footer>
+      <div class="container">
+          <div class="row">
+              <div class="col-md-4">
+                  <span class="copyright">Copyright &copy; {{ site.title }} {{ "now"|date("Y") }}</span>
+              </div>
+              <div class="col-md-4">
+                  <ul class="list-inline social-buttons">
+                      {% for network in site.social %}
+                          <li><a href="{{ network.url }}"><i class="fa fa-{{ network.title }}"></i></a>
+                          </li>
+                      {% endfor %}
+                  </ul>
+              </div>
+              <div class="col-md-4">
+                  <ul class="list-inline quicklinks">
+                      {% for link in site.quicklinks %}
+                          <li><a href="{{ link.url }}">{{ link.title }}</a>
+                          </li>
+                      {% endfor %}
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </footer>
 
   {% block javascripts_bottom %}
   {{ assets.js('bottom')|raw }}

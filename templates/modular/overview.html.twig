@@ -1,0 +1,72 @@
+ <section id="overview" class="bg-light-gray">
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            {{ content }}
+        </div>
+    </div>
+    <div class="row">
+        {% for portfolio in page.header.portfolios %}
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <a href="#portfolioModal{{ portfolio.modalid }}" class="portfolio-link" data-toggle="modal">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img src="{{ page.media[portfolio.thumbnail].url }}" class="img-responsive" alt="">
+                </a>
+                <div class="portfolio-caption">
+                    <h4>{{ portfolio.title }}</h4>
+                    <p class="text-muted">{{ portfolio.subtitle }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+</section>
+ {% for portfolio in page.header.portfolios %}
+    <div class="portfolio-modal modal fade" id="portfolioModal{{ portfolio.modalid }}" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>{{ portfolio.title }}</h2>
+                            <hr class="star-primary">
+                            <img src="{{ page.media[portfolio.img].url }}" class="img-responsive img-centered" alt="{{ portfolio.alt }}">
+                            <h4>{{ portfolio.subtitle }}</h4>
+                            <p>{{ portfolio.description }}</p>
+                            {% if portfolio.listdescription|length > 0 %}
+                                <strong>{{portfolio.listdescription}}</strong>
+                            {% endif %}
+                            {% if portfolio.list|length > 0 %}
+                                <ul class="">
+                                    {% for listElem in portfolio.list|split(',') %}
+                                        <li>{{ listElem }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                            <ul class="list-inline item-details">
+                                {% for tag in portfolio.tags|split(',') %}
+                                    <li>
+                                        <strong>
+                                            <a href="{{tag}}">{{ tag }}</a>
+                                        </strong>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}

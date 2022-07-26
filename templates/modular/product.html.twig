@@ -1,0 +1,23 @@
+<section id="product">
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            {{ content }}
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="row text-center">
+        <div class="center" style="margin: 0 auto; display: inline-block;">
+            {% for installdata in page.header.installations %}
+                {% if installdata.name and installdata.amounth %}
+                    <div style="margin-left: 30px; margin-right: 30px; margin-bottom: 10px;" class="pull-left text-center">
+                        <h3><strong>{{ installdata.name }}</strong></h3>
+                        <h1 class="service-heading" style="font-size: 70px; margin-bottom: 0;">{{ installdata.amounth }}</h1>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</section>
